@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoHub - Embrace Sustainable Living</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+        .body{
+            background-image: url('./assets/image1.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            animation: fadeBackground 2s ease-in-out;
+        }
+        @keyframes fadeBackground {
+        from{
+        opacity: 0;
+        }
+        to{
+        opacity: 1;
+        }
+            
+        }
+
+        /* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Navigation Buttons Styling */
+.nav {
+    display: flex;
+    justify-content: center;
+    background-color: #00695c;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav button {
+    background-color: #004d40;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.nav button:hover {
+    background-color: #00796b;
+}
+
+/* Active Button Highlight */
+.nav button:focus {
+    outline: none;
+    background-color: #00796b;
+}
+
+/* Section Styling */
+.section {
+    display: none;
+    padding: 30px 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section.active {
+    display: block;
+}
+
+/* Section Heading */
+.section h2 {
+    font-size: 24px;
+    color: #004d40;
+    margin-bottom: 20px;
+}
+
+/* Contact Form Styling */
+.contact-form label {
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #00796b;
+}
+
+.contact-form button[type="submit"] {
+    background-color: #004d40;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button[type="submit"]:hover {
+    background-color: #00796b;
+}
+
+/* Map (Iframe) Styling */
+#location {
+    border: none;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+    </style>
+</head>
+<body class="body">
+
+    <!-- Header Section -->
+    <header>
+        <h1>EcoHub</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#calculator">Carbon Calculator</a></li>
+                <li><a href="#tips">Green Tips</a></li>
+                <li><a href="#products">Eco-Friendly Products</a></li>
+                <li><a href="#stories">Community Stories</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#contact-us">Contact Us</a></li>
+                <li><a href="#team">Team Description</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" style="color: antiquewhite ;margin: 10px;padding: 50px;">
+        <h2>Welcome to EcoHub</h2>
+        <p>EcoHub is your go-to platform for discovering sustainable living practices, connecting with a community of eco-conscious individuals, and accessing tools to reduce your impact on the planet. Join us on the journey towards a greener, more sustainable world.</p>
+        <ul>
+            <li><strong>Explore</strong> green living tips and eco-friendly products.</li>
+            <li><strong>Calculate</strong> your carbon footprint and discover areas for improvement.</li>
+            <li><strong>Share</strong> your own sustainable journey with a community that cares.</li>
+        </ul>
+        <a href="#calculator" class="cta-button">Start Your Green Journey</a>
+    </section>
+
+    <section id="calculator" class="cal">
+        <h2>Carbon Footprint Calculator</h2>
+        <p>Understanding your carbon footprint is the first step toward reducing it. Use this calculator to see how your daily habits impact the environment, and get tailored tips for lowering your footprint.</p>
+        <form id="carbon-calculator">
+            <label for="transport">Weekly Transport (in km):</label>
+            <input type="number" id="transport" name="transport" placeholder="e.g., 50" required>
+    
+            <label for="electricity">Monthly Electricity Usage (kWh):</label>
+            <input type="number" id="electricity" name="electricity" placeholder="e.g., 200" required>
+    
+            <label for="diet">Diet Type:</label>
+            <select id="diet" name="diet">
+                <option value="meat">Meat-based</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="vegan">Vegan</option>
+            </select>
+    
+            <label for="waste">Weekly Waste (in kg):</label>
+            <input type="number" id="waste" name="waste" placeholder="e.g., 5" required>
+    
+            <button type="button" id="calculate-btn">Calculate Carbon Footprint</button>
+        </form>
+    
+        <div id="res"></div>  <!-- Where the result will be displayed -->
+
+        
+    </section>
+    
+
+    <!-- Green Living Tips Section -->
+    <section id="tips" class="tips">
+        <h2>Green Living Tips</h2>
+        <div class="tips-grid">
+            <div class="tip-card">
+                <h3>Reduce Energy Usage</h3>
+                <p>Switch to energy-efficient appliances and remember to unplug devices when not in use. Every small action counts in saving energy!</p>
+                <ul>
+                    <li>Turn off lights when leaving rooms.</li>
+                    <li>Use natural lighting during the day.</li>
+                    <li>Set thermostats efficiently.</li>
+                </ul>
+            </div>
+            <div class="tip-card">
+                <h3>Conserve Water</h3>
+                <p>Water is a precious resource. Taking shorter showers, fixing leaks, and using water-efficient fixtures can make a big difference.</p>
+                <ul>
+                    <li>Use a bucket instead of a hose for washing.</li>
+                    <li>Install water-saving showerheads.</li>
+                    <li>Collect rainwater for gardening.</li>
+                </ul>
+            </div>
+            <div class="tip-card">
+                <h3>Choose Sustainable Products</h3>
+                <p>Support brands that prioritize sustainability. Look for products made from recycled materials or renewable resources.</p>
+                <ul>
+                    <li>Buy in bulk to reduce packaging waste.</li>
+                    <li>Opt for reusable items like water bottles and bags.</li>
+                    <li>Choose locally made products to cut down on emissions.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eco-Friendly Products Section -->
+    <section id="products">
+        <h2>Eco-Friendly Products</h2>
+        <p style="color:antiquewhite; text-align: center;">Explore a curated list of products designed to help you live sustainably and reduce your environmental footprint.</p>
+        <div class="product-list">
+            <div class="product-card">
+                <h3>Reusable Beeswax Wraps</h3>
+                <p>A sustainable alternative to plastic wrap, these wraps keep food fresh without the waste. Perfect for sandwiches, fruits, and leftovers.</p>
+                <a href="#details" class="details-button">Learn More</a>
+            </div>
+            <div class="product-card">
+                <h3>Eco-Friendly Laundry Detergent</h3>
+                <p>This detergent is biodegradable, phosphate-free, and cruelty-free. Safe for both the environment and your clothes.</p>
+                <a href="#details" class="details-button">Learn More</a>
+            </div>
+            <div class="product-card">
+                <h3>Stainless Steel Straws</h3>
+                <p>Say goodbye to plastic straws! These reusable straws are durable, easy to clean, and ideal for any drink.</p>
+                <a href="#details" class="details-button">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Stories Section -->
+    <section id="stories" class="stories">
+        <h2>Community Stories</h2>
+        <p style="color: antiquewhite; text-align: center;">Read stories from our community about their journey to sustainable living. Share your own story to inspire others!</p>
+        <div class="story-submission" style="color: antiquewhite; margin: 10px; padding: 50px;">
+            <h3>Submit Your Story</h3>
+            <form id="story-form">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name">
+
+                <label for="story">Share Your Journey:</label>
+                <textarea id="story" name="story" placeholder="Describe how you are making a difference..."></textarea>
+                
+                <button type="button">Submit Story</button>
+            </form>
+        </div>
+        <div class="story-list">
+            <div class="story-card">
+                <h3>Emma’s Plastic-Free Challenge</h3>
+                <p>Emma shares her story about going plastic-free for 30 days and how it changed her perspective on waste reduction.</p>
+            </div>
+            <div class="story-card">
+                <h3>John’s Solar Home Project</h3>
+                <p>John shares his journey of converting his home to solar power and the impact it has had on his energy bills and lifestyle.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources">
+        <h2>Resources</h2>
+        <p style="color: antiquewhite; margin: 10px; padding: 50px;">Explore guides, articles, and tools to deepen your understanding of sustainability and find practical ways to apply green practices.</p>
+        <ul>
+            <li><a href="https://www.earthlust.com/beginners-guide-to-sustainable-living/">The Beginner’s Guide to Sustainable Living</a></li>
+            <li><a href="https://news.climate.columbia.edu/2018/12/27/35-ways-reduce-carbon-footprint/">10 Ways to Reduce Your Carbon Footprint</a></li>
+            <li><a href="https://www.npr.org/2020/04/07/828918397/how-to-compost-at-home">How to Start Composting at Home</a></li>
+            <li><a href="https://www.sustainably-chic.com/blog/what-is-sustainable-fashion#:~:text=Sustainable%20fashion%20integrates%20environmental%2C%20social%2C%20and%20economic%20considerations,and%20ethically%20produced%20but%20also%20durable%20and%20accessible.">Sustainable Fashion: What You Need to Know</a></li>
+        </ul>
+    </section>
+
+    <div class="nav">
+        <button onclick="showSection('about-us')">About Us</button>
+        <button onclick="showSection('contact-us')">Contact Us</button>
+    </div>
+    
+    <!-- About Us Section -->
+    <section id="about-us" class="section active">
+        <h2>About Us</h2>
+        <p>Welcome to EcoHub! We are dedicated to promoting eco-friendly practices and sustainable living. Our team of experts provides valuable insights and solutions to help you make environmentally responsible choices.</p>
+
+        <label for="location"></label>
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.401274695076!2d76.99458387417681!3d11.083441453457473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8f792ec7c0dbb%3A0x6c150aa4582cc7a4!2sKG%20College%20of%20Arts%20and%20Science!5e0!3m2!1sen!2sin!4v1731131037145!5m2!1sen!2sin" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <!-- Add more details here as needed -->
+    </section>
+    
+    <!-- Contact Us Section -->
+    <section id="contact-us" class="section">
+        <h2>Contact Us</h2>
+        <form action="#" method="post" class="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+    
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+    
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+    
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    
+
+<!-- Team Description Section -->
+<section id="team">
+    <h2>Our Team - Tech Knights</h2>
+    <div class="team-container" style="width: 90%;">
+        <!-- Team Member 1 -->
+        <div class="team-card">
+            <!-- <img src="path-to-image1.jpg" alt="Member 1"> -->
+            <h3>Saran.R</h3>
+            <p>Module: Eco Calculator,<br>Tips,<br>Resources</p>
+            <a href="https://github.com/johndoe" target="_blank">GitHub</a>
+            <!-- <a href="https://netlify.app/johndoe" target="_blank">Netlify</a> -->
+        </div>
+        <!-- Team Member 2 -->
+        <div class="team-card">
+            <!-- <img src="path-to-image2.jpg" alt="Member 2"> -->
+            <h3>RagulKannan.M</h3>
+            <p>Module: Green Tips,<br>Products,<br>Home</p>
+            <a href="https://github.com/ragulkannan12" target="_blank">GitHub</a>
+            <!-- <a href="https://netlify.app/janesmith" target="_blank">Netlify</a> -->
+        </div>
+        <!-- Team Member 3 -->
+        <div class="team-card">
+            <!-- <img src="path-to-image3.jpg" alt="Member 3"> -->
+            <h3>Dinesh.A</h3>
+            <p>Module: Community Stories,<br>Contact Us,<br>Products</p>
+            <a href="https://github.com/A-Dinesh28" target="_blank">GitHub</a>
+            <!-- <a href="https://netlify.app/mikelee" target="_blank">Netlify</a> -->
+        </div>
+        <!-- Team Member 4 -->
+        <div class="team-card">
+            <!-- <img src="path-to-image3.jpg" alt="Member 4"> -->
+            <h3>Ranganathan.R</h3>
+            <p>Module: Community Stories,<br>Team Description,<br>Calculator</p>
+            <p></p>
+            <a href="https://github.com/ranganathan04" target="_blank">GitHub</a>
+            <a href="https://snazzy-vacherin-c336fe.netlify.app/" target="_blank">Netlify</a>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 EcoHub. Embrace Sustainable Living.</p>
+        <nav>
+            <a href="#home">Home</a> | <a href="#calculator">Calculator</a> | <a href="#tips">Tips</a> | <a href="#products">Products</a> | <a href="#stories">Stories</a> | <a href="#resources">Resources</a> |<a href="#contact-us">Contact Us</a> | <a href="#team">Team Description</a>
+        </nav>
+    </footer>
+
+    <script src="./script.js"></script>
+
+</body>
+</html>

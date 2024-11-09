@@ -1,0 +1,273 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    color: #333;
+    background-size: cover;
+    line-height: 1.6;
+
+}
+
+header {
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 1rem;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #76c7c0;
+}
+
+/* Section Titles */
+section h2 {
+    font-size: 2rem;
+    color: #4c8b7d;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Call-to-action button */
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    color: #fff;
+    background-color: #4c8b7d;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #76c7c0;
+}
+
+/* Form Styles */
+form label {
+    display: block;
+    margin: 0.5rem 0;
+    font-weight: bold;
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Advanced Card Styles */
+.tips-grid, .product-list, .story-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem auto;
+    padding: 1rem;
+    max-width: 1200px;
+    cursor: pointer;
+}
+
+.tip-card, .product-card, .story-card {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.tip-card:hover, .product-card:hover, .story-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.tip-card h3, .product-card h3, .story-card h3 {
+    font-size: 1.5rem;
+    color: #4c8b7d;
+}
+
+.details-button {
+    color: #4c8b7d;
+    text-decoration: underline;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.details-button:hover {
+    color: #76c7c0;
+}
+
+.cal{
+    margin: 10px;
+    padding: 50px;
+    color: antiquewhite;
+}
+
+.tips{
+    color: #333;
+
+}
+
+.tips:hover{
+    cursor: pointer;
+    color: sienna;
+    
+    
+}
+
+/* Contact Us Section */
+#contact-us {
+    margin: 200px;
+    padding: 50px;
+    background-color: #6090e9;
+}
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.contact-form button {
+    background-color: #00796b;
+    color: #fff;
+    padding: 0.7em 1.5em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.contact-form button:hover {
+    background-color: #004d40;
+}
+
+/* Contact Us Section */
+#contact-us {
+    margin-top: 50px;
+    margin: 200px;
+    padding: 2em;
+    background-color: #f4f4f4;
+}
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.contact-form button {
+    background-color: #00796b;
+    color: #fff;
+    padding: 0.7em 1.5em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.contact-form button:hover {
+    background-color: #004d40;
+}
+
+/* Team Description Section */
+#team {
+    margin: 100px;
+    padding: 50px;
+    width: 750px;
+    text-align: center;
+    background-color: #e8f5e9;
+}
+.team-container {
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+}
+.team-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5em;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+.team-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.team-card h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin: 0.5em 0;
+}
+.team-card p {
+    color: #666;
+    font-size: 1em;
+}
+.team-card a {
+    color: #00796b;
+    text-decoration: none;
+    display: block;
+    margin: 0.3em 0;
+}
+.team-card a:hover {
+    color: #004d40;
+}
+.team-card:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+footer nav a {
+    color: #fff;
+    margin: 0 0.5rem;
+    text-decoration: none;
+}
+
+footer nav a:hover {
+    color: #76c7c0;
+}
